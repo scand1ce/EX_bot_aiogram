@@ -1,5 +1,7 @@
 import logging
 
+from aiogram.types import Update
+
 from loader import dp
 
 
@@ -15,7 +17,7 @@ async def errors_handler(update, exception):
     from aiogram.utils.exceptions import (Unauthorized, InvalidQueryID, TelegramAPIError,
                                           CantDemoteChatCreator, MessageNotModified, MessageToDeleteNotFound,
                                           MessageTextIsEmpty, RetryAfter,
-                                          CantParseEntities, MessageCantBeDeleted)
+                                          CantParseEntities, MessageCantBeDeleted, BadRequest)
 
     if isinstance(exception, CantDemoteChatCreator):
         logging.debug("Can't demote chat creator")
@@ -25,11 +27,11 @@ async def errors_handler(update, exception):
         logging.debug('Message is not modified')
         return True
     if isinstance(exception, MessageCantBeDeleted):
-        logging.debug('Message cant be deleted')
+        logging.info('Message cant be deleted')
         return True
 
     if isinstance(exception, MessageToDeleteNotFound):
-        logging.debug('Message to delete not found')
+        logging.info('Message to delete not found')
         return True
 
     if isinstance(exception, MessageTextIsEmpty):
@@ -44,13 +46,18 @@ async def errors_handler(update, exception):
         logging.exception(f'InvalidQueryID: {exception} \nUpdate: {update}')
         return True
 
-    if isinstance(exception, TelegramAPIError):
-        logging.exception(f'TelegramAPIError: {exception} \nUpdate: {update}')
+    if isinstance(exception, CantParseEntities):
+        await Update.get_current().message.answer(f'Попало в эррор хендлер. CantParseEntities: {exception.args}')
         return True
+
     if isinstance(exception, RetryAfter):
         logging.exception(f'RetryAfter: {exception} \nUpdate: {update}')
         return True
-    if isinstance(exception, CantParseEntities):
-        logging.exception(f'CantParseEntities: {exception} \nUpdate: {update}')
+    if isinstance(exception, BadRequest):
+        logging.exception(f'BadRequest: {exception} \nUpdate: {update}')
         return True
+    if isinstance(exception, TelegramAPIError):
+        logging.exception(f'TelegramAPIError: {exception} \nUpdate: {update}')
+        return True
+
     logging.exception(f'Update: {update} \n{exception}')
