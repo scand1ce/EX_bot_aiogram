@@ -10,12 +10,13 @@ from utils.misc import rate_limit
 @rate_limit(5, 'help')
 @dp.message_handler(CommandHelp())
 async def bot_help(message: types.Message):
-
     # Формируем ответ пользователю с помощью строк, которые мы потом соединим символом "\n" - новая строка
     text = [
         'Список команд: ',
         '/start - Начать',
         '/test - Тестирование',
+        '/form - Форма для пользователя',
+        '/menu - Меню',
         '/help - Справка'
     ]
     await message.answer('\n'.join(text))
