@@ -48,4 +48,6 @@ async def answer_q2(message: types.Message, state: FSMContext):
     await message.answer(f"answer1: {answer1}")
     await message.answer(f"answer2: {answer2}")
 
-    await state.reset_state(with_data=False)
+    await state.reset_state(with_data=True)
+    # await state.finish()
+

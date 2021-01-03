@@ -2,6 +2,7 @@ from .help import dp
 from .start import dp
 from .admin import dp
 from .testing import dp
+from .user_data import dp
 
 from .echo import dp
 
