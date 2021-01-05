@@ -17,6 +17,8 @@ async def bot_help(message: types.Message):
         '/test - Тестирование',
         '/form - Форма для пользователя',
         '/menu - Меню',
+        '/items - Инлайн кнопки',
+        '/item - Задание с инлайн кнопками',
         '/help - Справка'
     ]
     await message.answer('\n'.join(text))

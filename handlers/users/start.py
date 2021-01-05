@@ -17,20 +17,22 @@ from utils.db_api.user import User
 @rate_limit(limit=5)
 # @dp.message_handler(CommandStart(deep_link=compile(r"\d\d\d")), IsPrivate())
 @dp.message_handler(CommandStart())
-async def bot_start_deeplink(message: types.Message, user: User):
+# async def bot_start_deeplink(message: types.Message, user: User):
+async def bot_start(message: types.Message):
     # С помощью функции get_args забираем аргументы после команды start. (для примера выше - будет "123")
     deep_link_args = message.get_args()
 
     await message.answer(f'Привет, {message.from_user.full_name}!\n'
                          f'Вы находитесь в личной переписке. \n'
                          f'В вашей команде есть диплинк\n'
-                         f'Вы передали аргумент {deep_link_args}.\n'
-                         f'Юзер полученный через миддлварь: {user.__dict__}')
+                         f'Вы передали аргумент {deep_link_args}.\n')
+                         # f'Юзер полученный через миддлварь: {user.__dict__}')
 
 
 # В этом хендлере мы ловим простое нажатие на команду /start, не прошедшее под условие выше
 @dp.message_handler(CommandStart(deep_link=None), IsPrivate())
-async def bot_start(message: types.Message, user: User):
+# async def bot_start(message: types.Message, user: User):
+async def bot_start(message: types.Message):
     # Для создания диплинк-ссылки - нужно получить юзернейм бота
     bot_user = await dp.bot.get_me()
 
@@ -39,5 +41,5 @@ async def bot_start(message: types.Message, user: User):
     await message.answer(f'Привет, {message.from_user.full_name}!\n'
                          f'Вы находитесь в личной переписке. \n'
                          f'В вашей команде нет диплинка.\n'
-                         f'Ваша диплинк ссылка - {deep_link}\n'
-                         f'Юзер полученный через миддлварь: {user.__dict__}')
+                         f'Ваша диплинк ссылка - {deep_link}\n')
+                         # f'Юзер полученный через миддлварь: {user.__dict__}')
