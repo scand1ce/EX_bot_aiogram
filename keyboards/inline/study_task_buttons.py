@@ -1,6 +1,7 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import emoji
 from keyboards.inline.callback_datas import buy_callback
+from loader import bot
 
 
 buttons = InlineKeyboardMarkup(
@@ -24,13 +25,8 @@ buttons = InlineKeyboardMarkup(
 
                 ),
             ],
-            [
-                InlineKeyboardButton(
-                        text="Поделиться с другом",
-                        url="https://www.google.com/search?q="
-
-                ),
-            ]
-
-        ],
+    ],
 )
+
+switch_button = InlineKeyboardButton(text="Поделиться с другом", switch_inline_query="")
+buttons.add(switch_button)

@@ -13,12 +13,13 @@ from loader import dp, bot
 @dp.message_handler(Command('item'))
 async def item(message: types.Message):
     await bot.send_photo(
-                        chat_id=message.from_user.id,
-                        photo="https://d05c960b-0698-4405-ba5e-353903867a1b.selcdn.net/image/cache/data/"
-                              "tovary/handgun-wolf-01/Ugears-Handgun-Mechanical-Model-1--Title-530x380.jpg",
-                        caption=f'Пистолет {emoji.emojize(":thumbs_up:")}',
-                        reply_markup=buttons
-                    )
+            chat_id=message.from_user.id,
+            photo="https://d05c960b-0698-4405-ba5e-353903867a1b.selcdn.net/image/cache/data/"
+                  "tovary/handgun-wolf-01/Ugears-Handgun-Mechanical-Model-1--Title-530x380.jpg",
+            caption=f'Пистолет {emoji.emojize(":thumbs_up:")}',
+            reply_markup=(buttons)
+    )
+
 
 
 @dp.callback_query_handler(buy_callback.filter(item_name="Покупай товар № "))
@@ -29,12 +30,13 @@ async def buying_phone(call: CallbackQuery, callback_data: dict):
     gun = callback_data.get('item_name')
     one = callback_data.get('quantity')
     await call.bot.send_photo(
-                        chat_id=call.from_user.id,
-                        photo="https://d05c960b-0698-4405-ba5e-353903867a1b.selcdn.net/image/cache/data/"
-                              "tovary/handgun-wolf-01/Ugears-Handgun-Mechanical-Model-1--Title-530x380.jpg",
-                        caption=f'{gun}{one}',
-                        reply_markup=buttons
-                    )
+            chat_id=call.from_user.id,
+            photo="https://d05c960b-0698-4405-ba5e-353903867a1b.selcdn.net/image/cache/data/"
+                  "tovary/handgun-wolf-01/Ugears-Handgun-Mechanical-Model-1--Title-530x380.jpg",
+            caption=f'{gun}{one}',
+            reply_markup=buttons
+    )
+
 
 @dp.callback_query_handler(text="Вам понравился этот товар")
 async def like(call: CallbackQuery):
