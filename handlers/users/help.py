@@ -20,6 +20,13 @@ async def bot_help(message: types.Message):
         '/items - Инлайн кнопки',
         '/item - Задание с инлайн кнопками',
         '/format - Варианты форматирования текста',
+        '/set_pthoto - Установить фото в чате',
+        '/set_title - Установить название группы',
+        '/set_description - Установить описание группы',
+        '/ro - Режим Read Only',
+        '/unro - Отключить RO',
+        '/ban - Забанить',
+        '/unban", "Розбанить',
         '/help - Справка'
     ]
     await message.answer('\n'.join(text))

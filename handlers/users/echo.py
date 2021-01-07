@@ -19,10 +19,10 @@ async def bot_echo(message: types.Message):
     from loader import bot
 
     # Отправим сообщение пользователю - вариант 1
-    await bot.send_message(chat_id=chat_id, text=text)
+    # await bot.send_message(chat_id=chat_id, text=text)
 
     # Отправим сообщение пользователю - вариант 2 (без ввода chat_id)
-    # await message.answer(text=text)
+    await message.answer(text=text)
 
     # Отправим сообщение пользователю - вариант 3 (с реплаем)
     # await message.reply(text=text)

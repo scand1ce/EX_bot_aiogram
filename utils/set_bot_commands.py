@@ -10,6 +10,13 @@ async def set_default_commands(dp):
         types.BotCommand("items", "Инлайн кнопки"),
         types.BotCommand("item", "Задание с инлайн кнопками"),
         types.BotCommand("format", "Варианты форматирования текста"),
+        types.BotCommand("set_photo", "Установить фото в чате"),
+        types.BotCommand("set_title", "Установить название группы"),
+        types.BotCommand("set_description", "Установить описание группы"),
+        types.BotCommand("ro", "Режим Read Only"),
+        types.BotCommand("unro", "Отключить RO"),
+        types.BotCommand("ban", "Забанить"),
+        types.BotCommand("unban", "Розбанить"),
         types.BotCommand("help", "Помощь")
 
     ])
