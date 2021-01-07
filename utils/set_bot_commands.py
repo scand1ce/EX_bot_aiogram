@@ -9,6 +9,7 @@ async def set_default_commands(dp):
         types.BotCommand("menu", "Меню с кнопками"),
         types.BotCommand("items", "Инлайн кнопки"),
         types.BotCommand("item", "Задание с инлайн кнопками"),
+        types.BotCommand("format", "Варианты форматирования текста"),
         types.BotCommand("help", "Помощь")
 
     ])
