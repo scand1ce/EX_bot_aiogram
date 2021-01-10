@@ -11,6 +11,7 @@ aiohttp = "*"
 aioredis = "*"
 python-dotenv = "*"
 emoji = "*"
+loguru = "*"
 
 [requires]
 python_version = "3.8"

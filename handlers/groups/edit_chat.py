@@ -1,14 +1,14 @@
 import io
+import logging
 
 from aiogram import types
 from aiogram.dispatcher.filters import AdminFilter, Command
-import logging
 
 from filters import IsGroup
 from loader import dp
 
 
-@dp.message_handler(IsGroup(), AdminFilter(), Command("set_photo", prefixes="!/"))
+@dp.message_handler(IsGroup(), AdminFilter(), Command("set_photo"))
 async def set_new_photo(message: types.Message):
     source_message = message.reply_to_message
     photo = source_message.photo[-1]
@@ -17,12 +17,12 @@ async def set_new_photo(message: types.Message):
 
     try:
         await message.chat.set_photo(photo=input_file)
-        await message.reply("Фотка была успешна обновлена.")
+        await message.reply("Фото было успешно обновлено.")
     except Exception as err:
         logging.exception(err)
 
 
-@dp.message_handler(IsGroup(), AdminFilter(), Command("set_title", prefixes="!/"))
+@dp.message_handler(IsGroup(), AdminFilter(), Command("set_title"))
 async def set_new_title(message: types.Message):
     source_message = message.reply_to_message
     title = source_message.text
@@ -33,7 +33,7 @@ async def set_new_title(message: types.Message):
     await message.chat.set_title(title=title)
 
 
-@dp.message_handler(IsGroup(), AdminFilter(), Command("set_description", prefixes="!/"))
+@dp.message_handler(IsGroup(), AdminFilter(), Command("set_description"))
 async def set_new_description(message: types.Message):
     source_message = message.reply_to_message
     description = source_message.text
