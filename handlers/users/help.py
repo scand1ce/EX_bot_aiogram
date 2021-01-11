@@ -26,7 +26,9 @@ async def bot_help(message: types.Message):
         '/ro - Режим Read Only',
         '/unro - Отключить RO',
         '/ban - Забанить',
-        '/unban", "Розбанить',
+        '/unban" - "Розбанить',
+        '/chennels - Список каналов',
+        '/create_post - Предложить пост в канале',
         '/help - Справка'
     ]
     await message.answer('\n'.join(text))
