@@ -1,7 +1,7 @@
 from aiogram import Dispatcher
 
 from .admin import AdminFilter
-from .forwarded_message import IsForwaeded
+from .forwarded_message import IsForwarded
 from .group_chat import IsGroup
 from .private_chat import IsPrivate
 
@@ -11,3 +11,4 @@ def setup(dp: Dispatcher):
     dp.filters_factory.bind(IsGroup)
     dp.filters_factory.bind(AdminFilter)
     dp.filters_factory.bind(IsPrivate)
+    dp.filters_factory.bind(IsForwarded)

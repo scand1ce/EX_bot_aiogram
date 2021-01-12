@@ -27,7 +27,7 @@ async def bot_help(message: types.Message):
         '/unro - Отключить RO',
         '/ban - Забанить',
         '/unban" - "Розбанить',
-        '/chennels - Список каналов',
+        '/channels - Список каналов',
         '/create_post - Предложить пост в канале',
         '/help - Справка'
     ]

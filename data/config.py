@@ -6,7 +6,10 @@ load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
-channels = []
+channels = [
+    -1001200412225,
+
+]
 
 admins = [
     os.getenv("ADMIN_ID"),
