@@ -19,6 +19,8 @@ async def set_default_commands(dp):
         types.BotCommand("unban", "Розбанить"),
         types.BotCommand("channels", "Список каналов"),
         types.BotCommand("create_post", "Предложить пост в канале"),
+        types.BotCommand("get_cat", "Получить фото кота"),
+        types.BotCommand("more_cats", "Получить много котов"),
         types.BotCommand("help", "Помощь")
 
     ])

@@ -2,7 +2,7 @@ from loader import dp, bot
 from aiogram.types import ContentType, Message
 
 
-@dp.message_handler()
+@dp.message_handler(content_types=ContentType.TEXT)
 async def catch_text(message: Message):
     await message.reply("Вы прислали текст")
 

@@ -29,6 +29,8 @@ async def bot_help(message: types.Message):
         '/unban" - "Розбанить',
         '/channels - Список каналов',
         '/create_post - Предложить пост в канале',
+        '/get_cat - Получить фото кота',
+        '/more_cats - Получить много котов',
         '/help - Справка'
     ]
     await message.answer('\n'.join(text))

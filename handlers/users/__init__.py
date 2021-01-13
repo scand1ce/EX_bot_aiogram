@@ -1,6 +1,6 @@
 from .admin import dp
 from .poster import dp
-
+from .sending_cat import dp
 
 from .formatting import dp
 from .help import dp
@@ -12,8 +12,9 @@ from .start import dp
 from .study_task import dp
 from .testing import dp
 from .user_data import dp
-from .content_type import dp
 
+
+from .content_type import dp
 from .echo import dp
 
 
