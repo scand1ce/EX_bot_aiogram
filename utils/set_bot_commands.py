@@ -21,6 +21,8 @@ async def set_default_commands(dp):
         types.BotCommand("create_post", "Предложить пост в канале"),
         types.BotCommand("get_cat", "Получить фото кота"),
         types.BotCommand("more_cats", "Получить много котов"),
+        types.BotCommand("show_on_map", "Геолокация"),
+        types.BotCommand("callback", "Контакт"),
         types.BotCommand("help", "Помощь")
 
     ])
