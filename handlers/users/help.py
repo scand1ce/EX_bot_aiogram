@@ -31,7 +31,8 @@ async def bot_help(message: types.Message):
         '/create_post - Предложить пост в канале',
         '/get_cat - Получить фото кота',
         '/more_cats - Получить много котов',
-        '/callback - Получить контакты'
+        '/callback - Получить контакты',
+        '/email - Добавить email в базу данных',
         '/help - Справка'
     ]
     await message.answer('\n'.join(text))

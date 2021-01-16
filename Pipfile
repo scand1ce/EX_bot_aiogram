@@ -12,6 +12,7 @@ aioredis = "*"
 python-dotenv = "*"
 emoji = "*"
 loguru = "*"
+litecli = "*"
 
 [requires]
 python_version = "3.8"

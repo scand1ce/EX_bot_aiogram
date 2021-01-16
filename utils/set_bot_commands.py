@@ -23,6 +23,7 @@ async def set_default_commands(dp):
         types.BotCommand("more_cats", "Получить много котов"),
         types.BotCommand("show_on_map", "Геолокация"),
         types.BotCommand("callback", "Контакт"),
+        types.BotCommand("email", "Добавить email в базу данных"),
         types.BotCommand("help", "Помощь")
 
     ])

@@ -3,6 +3,7 @@ from .poster import dp
 from .sending_cat import dp
 from .get_contact import dp
 from .get_location import dp
+from .update_db import dp
 
 from .formatting import dp
 from .help import dp
